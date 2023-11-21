@@ -1,22 +1,14 @@
 import React, {useState, useEffect} from "react";
 import { ActivityIndicator, Keyboard, StyleSheet, Text, TextInput, View, Button, FlatList, Pressable } from 'react-native';
 
-
+// Creates a search screen with search bar, button, and a FlatList to display search results in.
+//    *when nothing is searched, this FlatList displays the API's default query results
 export default function SearchScreen({ navigation }) {
     const [isLoading, setLoading] = useState(true);
     const [searchString, setSearchString] = useState('');
     const [artworks, setArtworks] = useState();
 
-    // async function getArtworks() {
-    //     fetch(`https://api.artic.edu/api/v1/artworks?limit=3`)
-    //         .then((response) => {
-    //             setArtworks(response.json());
-    //         })
-    //         .catch((error) => {
-    //             console.error(error)
-    //         })
-    // }
-
+    // Gets artworks from the API determined by a searchString input by the user.
     const getArtworks = async () => {
         try {
             const response = await fetch(`https://api.artic.edu/api/v1/artworks/search?q=${searchString}`);
@@ -38,8 +30,10 @@ export default function SearchScreen({ navigation }) {
                 <View style={styles.searchBarView}>
                     <TextInput
                         style={styles.searchBar}
+                        // updates the searchString variable as it is typed
                         onChangeText={newSearch => setSearchString(newSearch)}
                         defaultValue={searchString}
+                        // allows the user to dismiss the keyboard without submitting their search
                         onSubmitEditing={Keyboard.dismiss}
                     />
                     <View style={styles.searchButtonView}>
@@ -59,6 +53,8 @@ export default function SearchScreen({ navigation }) {
                         <ActivityIndicator />
                     ) : (
                         <FlatList
+                        // Renders the title of each artwork returned from getArtworks(), and each is a Pressable component that
+                        // navigates to an artwork by passing its ID
                         data={artworks.data}
                         renderItem={({item}) => (
                                 <Pressable style={styles.searchResultBox} onPress={() => {navigation.navigate('Artwork', {
@@ -72,6 +68,7 @@ export default function SearchScreen({ navigation }) {
     )
 }
 
+// Creates a style sheet object used above in the style attributes
 const styles = StyleSheet.create({
     searchView: {
         width: '100%',

@@ -1,4 +1,3 @@
-import { StyleSheet, Text, Pressable, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SearchScreen from './components/SearchScreen';
@@ -6,7 +5,7 @@ import Artwork from './components/Artwork';
 
 const Stack = createNativeStackNavigator();
 
-
+// Creates the base app with navigation between the search page and an artwork's page
 export default function App() {
   return (
     <NavigationContainer>
@@ -24,12 +23,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    padding: 100
-  },
-});
