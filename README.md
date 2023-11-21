@@ -10,13 +10,14 @@ The purpose of creating this app was so I could learn React Native and integrate
 
 This app was developed using Visual Studio Code and the Expo Go iOS mobile app. Expo Go allowed me to test the application in real time.
 
-I used React Native and expo to create this application. I also installed an additional library called React Navigation to navigate between screens.
+I used React Native and expo to create this application. I also installed an additional library called React Navigation to navigate between screens. The artwork is provided by the Art Institute of Chicago's API.
 
 # Useful Websites
 
 * [React Navigation](https://reactnavigation.org/)
 * [React Native Docs](https://reactnative.dev/docs/getting-started)
 * [Expo Docs](https://docs.expo.dev/)
+* [Art Institute of Chicago API Docs](https://api.artic.edu/docs/)
 
 # Future Work
 
