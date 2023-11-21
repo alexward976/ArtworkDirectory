@@ -4,7 +4,7 @@ This simple artwork directory app allows users to search for artworks and artist
 
 The purpose of creating this app was so I could learn React Native and integrate with an existing API.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/tnoQrBW8aiY)
 
 # Development Environment
 
